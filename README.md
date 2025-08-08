@@ -19,9 +19,9 @@ A **platform-independent** C library for MAX31856 Precision Thermocouple to Digi
 ```
 MAX31856_Library/
 ├── max31856.h          # Header file
-├── max31856.c          # Implementation file  
-├── README.md           # This guide
-└── examples/
+└── max31856.c          # Implementation file  
+Core/
+└── Scr/
     └── main.c    # Example
 ```
 
