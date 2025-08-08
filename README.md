@@ -443,3 +443,7 @@ MIT License - Free for commercial and personal use.
 ---
 
 **Note**: This library is designed to be platform-independent. The STM32 examples are just demonstrations - you can use this library with any microcontroller that supports SPI communication by implementing the 4 platform interface functions.
+
+## 💖 Support This Project
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q1JW4XS)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/phamnamhien)
