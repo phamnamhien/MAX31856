@@ -77,11 +77,11 @@ max31856_status_t my_spi_write_read(MAX31856_Handle_t *hmax,
 }
 
 // CS pin control functions
-void my_cs_low(MAX31856_Handle_t *hmax) {
+void my_cs_low(void) {
     // Set CS pin LOW
 }
 
-void my_cs_high(MAX31856_Handle_t *hmax) {
+void my_cs_high(void) {
     // Set CS pin HIGH  
 }
 
@@ -146,11 +146,11 @@ max31856_status_t stm32_spi_write_read(MAX31856_Handle_t *hmax,
     return MAX31856_TIMEOUT;
 }
 
-void stm32_cs_low(MAX31856_Handle_t *hmax) {
+void stm32_cs_low(void) {
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 }
 
-void stm32_cs_high(MAX31856_Handle_t *hmax) {
+void stm32_cs_high(void) {
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
 }
 
@@ -170,11 +170,11 @@ max31856_status_t arduino_spi_write_read(MAX31856_Handle_t *hmax,
     return MAX31856_OK;
 }
 
-void arduino_cs_low(MAX31856_Handle_t *hmax) {
+void arduino_cs_low(void) {
     digitalWrite(CS_PIN, LOW);
 }
 
-void arduino_cs_high(MAX31856_Handle_t *hmax) {
+void arduino_cs_high(void) {
     digitalWrite(CS_PIN, HIGH);
 }
 
@@ -200,11 +200,11 @@ max31856_status_t esp32_spi_write_read(MAX31856_Handle_t *hmax,
     return MAX31856_TIMEOUT;
 }
 
-void esp32_cs_low(MAX31856_Handle_t *hmax) {
+void esp32_cs_low(void) {
     gpio_set_level(CS_PIN, 0);
 }
 
-void esp32_cs_high(MAX31856_Handle_t *hmax) {
+void esp32_cs_high(void) {
     gpio_set_level(CS_PIN, 1);
 }
 
@@ -221,15 +221,12 @@ void esp32_delay_ms(uint32_t ms) {
 ```c
 max31856_status_t MAX31856_Init(MAX31856_Handle_t *hmax,
                                 const max31856_platform_t *platform,
-                                void *cs_port, uint32_t cs_pin,
                                 max31856_tc_type_t tc_type);
 ```
 - **Description**: Initialize MAX31856 device
 - **Parameters**: 
   - `hmax`: Handle pointer
   - `platform`: Platform interface functions
-  - `cs_port`: CS GPIO port (can be NULL if not used)
-  - `cs_pin`: CS GPIO pin (can be 0 if not used)
   - `tc_type`: Thermocouple type
 - **Returns**: `MAX31856_OK` if successful
 
@@ -346,7 +343,7 @@ MAX31856_Handle_t sensors[4];
 
 // Initialize multiple sensors with different CS pins
 for (int i = 0; i < 4; i++) {
-    MAX31856_Init(&sensors[i], &platform, cs_ports[i], cs_pins[i], MAX31856_TC_TYPE_K);
+    MAX31856_Init(&sensors[i], &platform, MAX31856_TC_TYPE_K);
 }
 
 // Read all sensors
@@ -441,19 +438,7 @@ MAX31856_SetAvgMode(&tc_sensor, MAX31856_AVG_16_SAMPLES);
 
 MIT License - Free for commercial and personal use.
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📞 Support
-
-- **Issues**: Create an issue on GitHub
-- **Documentation**: Check this README
-- **Examples**: See examples/ folder
+## project
 
 ---
 
