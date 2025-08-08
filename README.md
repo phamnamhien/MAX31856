@@ -437,9 +437,6 @@ MAX31856_SetAvgMode(&tc_sensor, MAX31856_AVG_16_SAMPLES);
 ## 📄 License
 
 MIT License - Free for commercial and personal use.
-
-## project
-
 ---
 
 **Note**: This library is designed to be platform-independent. The STM32 examples are just demonstrations - you can use this library with any microcontroller that supports SPI communication by implementing the 4 platform interface functions.
