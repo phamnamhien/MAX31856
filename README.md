@@ -438,12 +438,6 @@ MAX31856_SetAvgMode(&tc_sensor, MAX31856_AVG_16_SAMPLES);
 ## 📋 Tested Platforms
 
 - ✅ STM32F103C8T6 (Blue Pill)
-- ✅ STM32F401CCU6 (Black Pill)  
-- ✅ Arduino Uno/Nano
-- ✅ ESP32
-- ✅ ESP8266
-- ✅ PIC32
-- ✅ AVR (ATmega328P)
 
 ## 📄 License
 
