@@ -22,9 +22,7 @@ MAX31856_Library/
 ├── max31856.c          # Implementation file  
 ├── README.md           # This guide
 └── examples/
-    ├── stm32_main.c    # STM32 example
-    ├── arduino_main.cpp # Arduino example
-    └── esp32_main.c    # ESP32 example
+    └── main.c    # Example
 ```
 
 ## 🚀 Quick Start
