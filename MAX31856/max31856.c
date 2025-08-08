@@ -108,7 +108,7 @@ max31856_status_t MAX31856_Init(MAX31856_Handle_t *hmax,
 
     /* Set CS high initially */
     if (hmax->platform.cs_high) {
-        hmax->platform.cs_high(hmax);
+        hmax->platform.cs_high();
     }
 
     if (hmax->platform.delay_ms) {
@@ -667,7 +667,7 @@ max31856_status_t MAX31856_ReadRegister(MAX31856_Handle_t *hmax, uint8_t reg, ui
     max31856_status_t status;
 
     if (hmax->platform.cs_low) {
-        hmax->platform.cs_low(hmax);
+        hmax->platform.cs_low();
     }
 
     if (hmax->platform.delay_ms) {
@@ -682,7 +682,7 @@ max31856_status_t MAX31856_ReadRegister(MAX31856_Handle_t *hmax, uint8_t reg, ui
     }
 
     if (hmax->platform.cs_high) {
-        hmax->platform.cs_high(hmax);
+        hmax->platform.cs_high();
     }
 
     if (status != MAX31856_OK) {
@@ -709,7 +709,7 @@ max31856_status_t MAX31856_WriteRegister(MAX31856_Handle_t *hmax, uint8_t reg, u
     tx_data[1] = data;
 
     if (hmax->platform.cs_low) {
-        hmax->platform.cs_low(hmax);
+        hmax->platform.cs_low();
     }
 
     if (hmax->platform.delay_ms) {
@@ -723,7 +723,7 @@ max31856_status_t MAX31856_WriteRegister(MAX31856_Handle_t *hmax, uint8_t reg, u
     }
 
     if (hmax->platform.cs_high) {
-        hmax->platform.cs_high(hmax);
+        hmax->platform.cs_high();
     }
 
     return status;
@@ -746,7 +746,7 @@ max31856_status_t MAX31856_ReadMultipleRegisters(MAX31856_Handle_t *hmax, uint8_
     max31856_status_t status;
 
     if (hmax->platform.cs_low) {
-        hmax->platform.cs_low(hmax);
+        hmax->platform.cs_low();
     }
 
     if (hmax->platform.delay_ms) {
@@ -761,7 +761,7 @@ max31856_status_t MAX31856_ReadMultipleRegisters(MAX31856_Handle_t *hmax, uint8_
     }
 
     if (hmax->platform.cs_high) {
-        hmax->platform.cs_high(hmax);
+        hmax->platform.cs_high();
     }
 
     if (status == MAX31856_OK) {

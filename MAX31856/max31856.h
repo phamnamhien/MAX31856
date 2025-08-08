@@ -141,8 +141,8 @@ typedef struct {
     max31856_status_t (*spi_write_read)(struct MAX31856_Handle *hmax, uint8_t *tx_data, uint8_t *rx_data, uint16_t size);
 
     /* GPIO Control Functions */
-    void (*cs_low)(struct MAX31856_Handle *hmax);
-    void (*cs_high)(struct MAX31856_Handle *hmax);
+    void (*cs_low)(void);
+    void (*cs_high)(void);
 
     /* Delay Function */
     void (*delay_ms)(uint32_t ms);
