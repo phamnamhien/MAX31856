@@ -1,0 +1,8 @@
+../Core/Src/main.c:68:19:platform_spi_write_read	1
+../Core/Src/main.c:78:6:platform_cs_low	1
+../Core/Src/main.c:85:6:platform_cs_high	1
+../Core/Src/main.c:92:6:platform_delay_ms	1
+../Core/Src/main.c:99:5:_write	1
+../Core/Src/main.c:205:6:SystemClock_Config	3
+../Core/Src/main.c:109:5:main	7
+../Core/Src/main.c:248:6:Error_Handler	1
