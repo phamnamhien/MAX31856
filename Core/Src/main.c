@@ -54,8 +54,8 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 // Platform functions for MAX31856
 max31856_status_t platform_spi_write_read(MAX31856_Handle_t *hmax, uint8_t *tx_data, uint8_t *rx_data, uint16_t size);
-void platform_cs_low(MAX31856_Handle_t *hmax);
-void platform_cs_high(MAX31856_Handle_t *hmax);
+void platform_cs_low(void);
+void platform_cs_high(void);
 void platform_delay_ms(uint32_t ms);
 int _write(int file, char *ptr, int len);
 /* USER CODE END PFP */
@@ -75,15 +75,15 @@ max31856_status_t platform_spi_write_read(MAX31856_Handle_t *hmax, uint8_t *tx_d
 /**
  * @brief Set CS pin low
  */
-void platform_cs_low(MAX31856_Handle_t *hmax) {
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+void platform_cs_low(void) {
+    HAL_GPIO_WritePin(MAX31856_CS_GPIO_Port, MAX31856_CS_Pin, GPIO_PIN_RESET);
 }
 
 /**
  * @brief Set CS pin high
  */
-void platform_cs_high(MAX31856_Handle_t *hmax) {
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+void platform_cs_high(void) {
+    HAL_GPIO_WritePin(MAX31856_CS_GPIO_Port, MAX31856_CS_Pin, GPIO_PIN_SET);
 }
 
 /**
